@@ -1,0 +1,43 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class TestDAO {
+	private Connection conn;
+	private PreparedStatement ps;
+	private ResultSet rs;
+	
+	private void connect() {
+		try {
+			Context context = new InitialContext();
+			DataSource ds = (DataSource)context.lookup("java:comp/env/hr");
+			conn = ds.getConnection();			
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void select_today() {
+		connect();
+		Date today = null;
+		String sql = "select sysdate from dual";
+		try {
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			rs.next();
+			today = rs.getDate("sysdate");
+			
+		
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+}

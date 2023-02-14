@@ -1,0 +1,23 @@
+package dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import dto.EmployeeDTO;
+import mybatis.MybatisFactory;
+
+public class EmployeeDAO {
+	private SqlSession sql;
+	private void connect() {
+		SqlSessionFactory factory = MybatisFactory.getInstance();
+		sql = factory.openSession(true);
+	}
+	//사원목록조회
+	public List<EmployeeDTO> employee_list() {
+		connect();
+		List<EmployeeDTO> list = sql.selectList("hr.list");
+		return list;
+	}
+}

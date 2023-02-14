@@ -1,0 +1,16 @@
+package command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import common.Command;
+
+public class EmployeeListCommand implements Command {
+
+//	@Override
+//	public void execute(HttpServletRequest request, HttpServletResponse response) {
+//		//DB에서 사원목록을 조회해온다
+//		
+//	}
+
+}

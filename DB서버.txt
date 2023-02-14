@@ -1,0 +1,8 @@
+DB 서버 IP : 122.164.58.220
+A조 username: ateam    password: ateam
+B조 username: bteam    password: bteam
+
+드라이버: oracle.jdbc.driver.OracleDriver
+연결자URL: jdbc:oracle:thin:@112.164.58.220:1521:xe
+유저명: ateam / bteam
+비밀번호: ateam / bteam

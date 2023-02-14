@@ -1,0 +1,5 @@
+범위(scope)
+1. application: 웹서버가 서비스되는 동안 유효.
+2. session: 세션이 유지되는 동안 유효
+3. request: 요청페이지와 응답페이지(servlet/jsp)까지 유효
+4. page: 현재실행중인 pageContext객체(jsp에서만 사용가능)
